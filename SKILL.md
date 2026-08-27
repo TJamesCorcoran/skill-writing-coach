@@ -10,6 +10,7 @@ POV, pacing, prose, copyediting, or the `audit` command family.
 
 ## Operating rules
 
+0. When the skill is loaded or `help` is invoked, print `active manuscript: <path>` first. Print `active manuscript: none` when no manuscript is active. For `help`, immediately follow with `cache clean` or `cache dirty` for the active manuscript.
 1. Identify the active writing project and its canonical memory file before making
    project-specific claims. Read the relevant memory and the current manuscript
    when a fresh reading is requested.
@@ -36,9 +37,15 @@ POV, pacing, prose, copyediting, or the `audit` command family.
 
 ## Commands
 
-- `help`: list every command below, including copyedit subcommands.
+- `help`: print the active manuscript, current cache status, then list every command below, including copyedit subcommands.
 - `audit`: display the cached 20-point audit, beginning with `cache clean` or
   `cache dirty`.
+- `audit x`: list the subitems under top-level audit item `x`.
+- `audit x.y`: list findings or suggestions for subitem `y` under item `x`,
+  clipped to the top ten by default.
+- `audit x.y --all`: list every finding for that subitem.
+- `audit x.y expand`: investigate deeply; state clearly if the concern is not
+  real, otherwise explain the precise problem and fix.
 - `audit init <filepath>`: verify and bind the active manuscript, cache, and
   audit-output paths to the supplied absolute filepath. Load adjacent project
   memory when available and report the selected paths.
@@ -51,14 +58,10 @@ POV, pacing, prose, copyediting, or the `audit` command family.
   human-only errors.
 - `audit copyedit fix`: fix all zero-guidance copyediting errors, then report
   what changed and whether the copyedit cache is dirty.
-- `audit details x.y`: list findings or suggestions for item `x`, subitem `y`,
-  clipped to the top ten by default.
-- `audit details x.y --all`: list every finding for that subitem.
-- `audit details x.y expand`: investigate deeply; state clearly if the concern
-  is not real, otherwise explain the precise problem and fix.
 
-`x.y` is always shorthand for “item x, subitem y.” For example, `18.5` means
-continuity item 18, subitem 5.
+`x` identifies a top-level audit item; `x.y` identifies subitem `y` under item
+`x`. For example, `audit 18` lists continuity subitems and `audit 18.5` shows
+the findings for subitem 5.
 
 ## POV switches
 
