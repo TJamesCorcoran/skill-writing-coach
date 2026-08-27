@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing Coach"
+  short_description: "Audit and improve manuscripts with cached review commands"
+  default_prompt: "Use $writing-coach to review or revise a manuscript."
