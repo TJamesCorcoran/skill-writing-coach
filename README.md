@@ -18,17 +18,17 @@ subitem investigation, copyediting triage, and practical revision guidance.
 
 ## Installation
 
-Install the skill by copying this directory into the agent's personal skills
+Install the skill by cloning its repository into the agent's personal skills
 directory:
 
 ```bash
-cp -R writing-coach ~/.codex/skills/
+cd ~/.codex/skills ; git clone https://github.com/TJamesCorcoran/skill-writing-coach.git
 ```
 
 For a Codex installation with `CODEX_HOME` set, use:
 
 ```bash
-cp -R writing-coach "$CODEX_HOME/skills/"
+cd "$CODEX_HOME/skills" ; git clone https://github.com/TJamesCorcoran/skill-writing-coach.git
 ```
 
 The package must contain `SKILL.md` at its top level. The `agents/openai.yaml`
