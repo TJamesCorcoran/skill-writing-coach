@@ -31,6 +31,15 @@ For a Codex installation with `CODEX_HOME` set, use:
 cd "$CODEX_HOME/skills" ; git clone https://github.com/TJamesCorcoran/skill-writing-coach.git
 ```
 
+After installation, point the skill at the manuscript:
+
+```text
+audit init /path/to/story.txt
+```
+
+This verifies the file and binds the active manuscript, cache, and `audit.txt`
+locations. It also loads adjacent project memory when available.
+
 The package must contain `SKILL.md` at its top level. The `agents/openai.yaml`
 file provides optional display metadata; the files under `references/` contain
 the detailed audit and POV guidance.
@@ -45,6 +54,7 @@ The command protocol is:
 ```text
 help
 audit
+audit init <filepath>
 audit /refresh
 audit /write
 audit cache status

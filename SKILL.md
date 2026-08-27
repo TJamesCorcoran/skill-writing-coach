@@ -39,6 +39,9 @@ POV, pacing, prose, copyediting, or the `audit` command family.
 - `help`: list every command below, including copyedit subcommands.
 - `audit`: display the cached 20-point audit, beginning with `cache clean` or
   `cache dirty`.
+- `audit init <filepath>`: verify and bind the active manuscript, cache, and
+  audit-output paths to the supplied absolute filepath. Load adjacent project
+  memory when available and report the selected paths.
 - `audit /refresh`: reread the manuscript, recompute the audit, refresh the
   cache, and display the newly cached audit.
 - `audit /write`: write the current audit to `audit.txt` beside `story.txt`.
